@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#103e34">
+    <meta name="description" content="Canal em Dia: protótipo para participação da comunidade e acompanhamento da manutenção dos canais de Paulista, Pernambuco.">
+    <title>Canais acompanhados · Canal em Dia</title>
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <script src="/js/config.js" defer></script>
+    <script src="/js/common.js" defer></script>
+    <script src="/js/canais.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+<div class="demo-strip"><span class="demo-dot"></span><strong>Ambiente de demonstração.</strong> Use somente informações fictícias.</div>
+<header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="/" class="brand" aria-label="Canal em Dia — página inicial">
+                <span class="brand-mark"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 12c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 17c3-3 5 3 8 0s5 3 8 0 4 0 4 0"/></svg></span>
+                <span class="brand-name">Canal em Dia<small>Cuidado que conecta</small></span>
+            </a>
+            <nav class="desktop-nav" aria-label="Navegação principal">
+                <a href="/" class="nav-item">Início</a>
+                <a href="/acompanhar" class="nav-item">Acompanhar</a>
+                <a href="/canais" class="nav-item active" aria-current="page">Canais</a>
+            </nav>
+            <div class="header-actions">
+                <a href="/novo-relato" class="button button-forest button-small">Novo relato <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+                <button class="mobile-toggle" type="button" id="menu-toggle" aria-expanded="false" aria-controls="mobile-navigation" aria-label="Abrir ou fechar menu">
+                    <span data-open><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></span><span data-close hidden><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></span>
+                </button>
+            </div>
+        </div>
+        <nav id="mobile-navigation" class="mobile-nav d-lg-none" aria-label="Navegação principal no celular" hidden>
+            <a class="nav-item" href="/">Início</a>
+            <a class="nav-item" href="/acompanhar">Acompanhar relato</a>
+            <a class="nav-item" href="/canais" aria-current="page">Canais acompanhados</a>
+            <a class="button button-forest" href="/novo-relato">Novo relato <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
+        </nav>
+    </div>
+</header>
+    <main id="conteudo" tabindex="-1">
+<div>
+    <div class="hero-shell">
+        <section class="hero hero-compact" aria-labelledby="canais-heading">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-copy">
+                        <div class="eyebrow">Canais acompanhados</div>
+                        <h1 id="canais-heading">Canais de <em>Paulista.</em></h1>
+                        <p class="hero-description">Acompanhe os canais do município e veja a situação da manutenção preventiva, das inspeções e das intervenções, trecho a trecho.</p>
+                        <p class="hero-note"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v6c0 5 7.5 9 7.5 9s7.5-4 7.5-9V6L12 3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg> Demonstração do projeto. Os dados desta página são fictícios.</p>
+                    </div>
+                    <div class="hero-art"><img src="/images/canal-paulista.svg" width="760" height="720" alt="" role="presentation"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="channels-section" aria-labelledby="lista-heading">
+        <div class="container">
+            <h2 id="lista-heading" class="visually-hidden">Lista de canais</h2>
+            <div class="demo-notice"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10h.01"/></svg><p><strong>Dados fictícios de demonstração.</strong> A situação de cada trecho é uma observação técnica datada: não é garantia contra alagamento nem substitui o atendimento de emergência da Defesa Civil.</p></div>
+
+            <div class="report-layout">
+                <div>
+                    <form class="filter-bar" role="search" aria-label="Filtrar canais" id="canais-form">
+                        <div class="search-field">
+                            <label for="canais-busca" class="visually-hidden">Buscar por canal, bairro ou trecho</label>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+                            <input id="canais-busca" type="search" class="form-control" placeholder="Buscar por canal, bairro ou trecho…" maxlength="100" autocomplete="off">
+                        </div>
+                        <div>
+                            <label for="canais-status" class="visually-hidden">Filtrar por situação</label>
+                            <select id="canais-status" class="form-select">
+                                <option value="">Todas as situações</option>
+                                <option value="em-dia">Em dia (3)</option><option value="atencao">Atenção (1)</option><option value="obstrucao">Com obstrução (1)</option><option value="sem-registro">Sem registro (1)</option>
+                            </select>
+                        </div>
+                    </form>
+
+                    <p class="results-count" role="status" aria-live="polite" id="canais-count" data-total="6">6 de 6 canais<span id="canais-clear-wrap" hidden> · <button type="button" class="text-link results-clear" data-clear>Limpar filtros</button></span></p>
+
+                    <ul class="channel-list" id="canais-lista">
+<li class="channel-item" data-status="em-dia" data-search="canal do centro centro trecho 04">
+    <button type="button" class="channel-row" aria-expanded="false" aria-controls="detalhe-TR-001">
+        <span class="tile" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 12c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 17c3-3 5 3 8 0s5 3 8 0 4 0 4 0"/></svg></span>
+        <span class="channel-main"><strong>Canal do Centro</strong><small>Trecho 04 · Centro</small></span>
+        <span class="status-pill channel-status status-canal-em-dia"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg> Em dia</span>
+        <span class="channel-date"><small>Observação técnica</small>14/10/2026</span>
+        <svg class="icon channel-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+    </button>
+    <div class="channel-detail" id="detalhe-TR-001" hidden>
+        <p class="channel-meaning">Inspecionado e sem obstrução na data da observação. Inspeção preventiva sem obstrução registrada.</p>
+        <dl class="channel-facts">
+            <div><dt>Identificador do trecho</dt><dd>TR-001</dd></div>
+            <div><dt>Data da observação</dt><dd>14/10/2026</dd></div>
+            <div><dt>Última manutenção validada</dt><dd>18/09/2026</dd></div>
+            <div><dt>Próxima inspeção</dt><dd>12/11/2026</dd></div>
+        </dl>
+    </div>
+</li>
+<li class="channel-item" data-status="atencao" data-search="canal do pina pina trecho 08">
+    <button type="button" class="channel-row" aria-expanded="false" aria-controls="detalhe-TR-002">
+        <span class="tile" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 12c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 17c3-3 5 3 8 0s5 3 8 0 4 0 4 0"/></svg></span>
+        <span class="channel-main"><strong>Canal do Pina</strong><small>Trecho 08 · Pina</small></span>
+        <span class="status-pill channel-status status-canal-atencao"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10h.01"/></svg> Atenção</span>
+        <span class="channel-date"><small>Observação técnica</small>08/10/2026</span>
+        <svg class="icon channel-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+    </button>
+    <div class="channel-detail" id="detalhe-TR-002" hidden>
+        <p class="channel-meaning">Há uma ocorrência em acompanhamento ou uma inspeção próxima do vencimento. Acúmulo de resíduos em acompanhamento; nova verificação programada.</p>
+        <dl class="channel-facts">
+            <div><dt>Identificador do trecho</dt><dd>TR-002</dd></div>
+            <div><dt>Data da observação</dt><dd>08/10/2026</dd></div>
+            <div><dt>Última manutenção validada</dt><dd>27/08/2026</dd></div>
+            <div><dt>Próxima inspeção</dt><dd>29/10/2026</dd></div>
+        </dl>
+    </div>
+</li>
+<li class="channel-item" data-status="em-dia" data-search="canal de janga janga trecho 02">
+    <button type="button" class="channel-row" aria-expanded="false" aria-controls="detalhe-TR-003">
+        <span class="tile" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 12c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 17c3-3 5 3 8 0s5 3 8 0 4 0 4 0"/></svg></span>
+        <span class="channel-main"><strong>Canal de Janga</strong><small>Trecho 02 · Janga</small></span>
+        <span class="status-pill channel-status status-canal-em-dia"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg> Em dia</span>
+        <span class="channel-date"><small>Observação técnica</small>01/10/2026</span>
+        <svg class="icon channel-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+    </button>
+    <div class="channel-detail" id="detalhe-TR-003" hidden>
+        <p class="channel-meaning">Inspecionado e sem obstrução na data da observação. Limpeza concluída e validada pela coordenação.</p>
+        <dl class="channel-facts">
+            <div><dt>Identificador do trecho</dt><dd>TR-003</dd></div>
+            <div><dt>Data da observação</dt><dd>01/10/2026</dd></div>
+            <div><dt>Última manutenção validada</dt><dd>01/10/2026</dd></div>
+            <div><dt>Próxima inspeção</dt><dd>05/11/2026</dd></div>
+        </dl>
+    </div>
+</li>
+<li class="channel-item" data-status="obstrucao" data-search="canal de abacaxi abacaxi trecho 06">
+    <button type="button" class="channel-row" aria-expanded="false" aria-controls="detalhe-TR-004">
+        <span class="tile" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 12c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 17c3-3 5 3 8 0s5 3 8 0 4 0 4 0"/></svg></span>
+        <span class="channel-main"><strong>Canal de Abacaxi</strong><small>Trecho 06 · Abacaxi</small></span>
+        <span class="status-pill channel-status status-canal-obstrucao"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 10 18H2L12 3Z"/><path d="M12 9v5m0 3h.01"/></svg> Com obstrução</span>
+        <span class="channel-date"><small>Observação técnica</small>19/10/2026</span>
+        <svg class="icon channel-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+    </button>
+    <div class="channel-detail" id="detalhe-TR-004" hidden>
+        <p class="channel-meaning">Obstrução confirmada pela equipe e ainda sem resolução validada. Obstrução confirmada; intervenção em programação.</p>
+        <dl class="channel-facts">
+            <div><dt>Identificador do trecho</dt><dd>TR-004</dd></div>
+            <div><dt>Data da observação</dt><dd>19/10/2026</dd></div>
+            <div><dt>Última manutenção validada</dt><dd>30/07/2026</dd></div>
+            <div><dt>Próxima inspeção</dt><dd>Não informado</dd></div>
+        </dl>
+    </div>
+</li>
+<li class="channel-item" data-status="em-dia" data-search="canal de maranguape maranguape trecho 11">
+    <button type="button" class="channel-row" aria-expanded="false" aria-controls="detalhe-TR-005">
+        <span class="tile" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 12c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 17c3-3 5 3 8 0s5 3 8 0 4 0 4 0"/></svg></span>
+        <span class="channel-main"><strong>Canal de Maranguape</strong><small>Trecho 11 · Maranguape</small></span>
+        <span class="status-pill channel-status status-canal-em-dia"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg> Em dia</span>
+        <span class="channel-date"><small>Observação técnica</small>10/10/2026</span>
+        <svg class="icon channel-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+    </button>
+    <div class="channel-detail" id="detalhe-TR-005" hidden>
+        <p class="channel-meaning">Inspecionado e sem obstrução na data da observação. Inspeção preventiva sem obstrução registrada.</p>
+        <dl class="channel-facts">
+            <div><dt>Identificador do trecho</dt><dd>TR-005</dd></div>
+            <div><dt>Data da observação</dt><dd>10/10/2026</dd></div>
+            <div><dt>Última manutenção validada</dt><dd>24/09/2026</dd></div>
+            <div><dt>Próxima inspeção</dt><dd>20/11/2026</dd></div>
+        </dl>
+    </div>
+</li>
+<li class="channel-item" data-status="sem-registro" data-search="canal do tabajara tabajara trecho 09">
+    <button type="button" class="channel-row" aria-expanded="false" aria-controls="detalhe-TR-006">
+        <span class="tile" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 12c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 17c3-3 5 3 8 0s5 3 8 0 4 0 4 0"/></svg></span>
+        <span class="channel-main"><strong>Canal do Tabajara</strong><small>Trecho 09 · Tabajara</small></span>
+        <span class="status-pill channel-status status-canal-sem-registro"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> Sem registro</span>
+        <span class="channel-date"><small>Observação técnica</small>Não informado</span>
+        <svg class="icon channel-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+    </button>
+    <div class="channel-detail" id="detalhe-TR-006" hidden>
+        <p class="channel-meaning">Nenhuma ocorrência ou inspeção registrada. Isso não significa ausência de obstrução. Trecho cadastrado na demonstração, sem inspeção nem ocorrência registrada.</p>
+        <dl class="channel-facts">
+            <div><dt>Identificador do trecho</dt><dd>TR-006</dd></div>
+            <div><dt>Data da observação</dt><dd>Não informado</dd></div>
+            <div><dt>Última manutenção validada</dt><dd>Não informado</dd></div>
+            <div><dt>Próxima inspeção</dt><dd>Não informado</dd></div>
+        </dl>
+    </div>
+</li>
+                    </ul>
+
+                    <div class="empty-card" id="canais-vazio" hidden>
+                        <span class="tile" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></span>
+                        <h3>Nenhum canal encontrado</h3>
+                        <p>Tente outro nome, bairro ou trecho, ou escolha outra situação.</p>
+                        <button type="button" class="button button-outline button-small" data-clear>Limpar filtros</button>
+                    </div>
+
+                    <div class="help-band">
+                        <span class="tile tile-round" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 6.5 6-2.5 6 2.5 6-2.5v13.5l-6 2.5-6-2.5-6 2.5V6.5Z"/><path d="M9 4v13.5m6-11v13.5"/></svg></span>
+                        <div>
+                            <h3>Visualize todos os canais no mapa</h3>
+                            <p>O mapa público depende de trechos revisados e publicáveis e ainda não está disponível. Esta lista é a alternativa para consultar cada trecho.</p>
+                        </div>
+                        <button class="nav-pending help-pending" type="button" disabled><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 6.5 6-2.5 6 2.5 6-2.5v13.5l-6 2.5-6-2.5-6 2.5V6.5Z"/><path d="M9 4v13.5m6-11v13.5"/></svg> Ver mapa <span class="pending-pill">Em breve</span></button>
+                    </div>
+                </div>
+
+                <aside class="report-sidebar" aria-label="Como ler a situação dos canais">
+                    <div class="sidebar-card dark">
+                        <div class="eyebrow">Como ler a situação</div>
+                        <h2>Uma observação,<br>uma data.</h2>
+                        <p>Cada trecho mostra a condição vista na última verificação técnica, sempre com a data da observação.</p>
+                        <ul class="legend-list"><li><span class="status-pill status-canal-em-dia"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg> Em dia</span><span>Inspecionado e sem obstrução na data da observação.</span></li><li><span class="status-pill status-canal-atencao"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10h.01"/></svg> Atenção</span><span>Há uma ocorrência em acompanhamento ou uma inspeção próxima do vencimento.</span></li><li><span class="status-pill status-canal-obstrucao"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 10 18H2L12 3Z"/><path d="M12 9v5m0 3h.01"/></svg> Com obstrução</span><span>Obstrução confirmada pela equipe e ainda sem resolução validada.</span></li><li><span class="status-pill status-canal-sem-registro"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> Sem registro</span><span>Nenhuma ocorrência ou inspeção registrada. Isso não significa ausência de obstrução.</span></li></ul>
+                    </div>
+                    <div class="sidebar-card"><div class="sidebar-safe"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v6c0 5 7.5 9 7.5 9s7.5-4 7.5-9V6L12 3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg><div><h3>Viu um problema?</h3><p>Observe de um lugar seguro e conte o que viu. Um relato ajuda a identificar o trecho.</p><a class="text-link mt-2" href="/novo-relato">Fazer um relato <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div></div></div>
+                    <p class="sidebar-caption">Piloto em proposta: trechos, parâmetros de inspeção e equipe ainda dependem de definição com a prefeitura.</p>
+                </aside>
+            </div>
+        </div>
+    </section>
+</div>
+    </main>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="/" class="brand" aria-label="Canal em Dia — voltar ao início"><span class="brand-mark"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 12c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 17c3-3 5 3 8 0s5 3 8 0 4 0 4 0"/></svg></span><span class="brand-name">Canal em Dia<small>Cuidado que conecta</small></span></a>
+                <p>Uma proposta para aproximar comunidade, cuidado ambiental e manutenção dos canais.</p>
+            </div>
+            <nav class="footer-links" aria-label="Navegação do rodapé">
+                <a href="/">Início</a>
+                <a href="/novo-relato">Novo relato</a>
+                <a href="/acompanhar">Acompanhar</a>
+                <a href="/canais">Canais</a>
+            </nav>
+        </div>
+        <div class="footer-bottom">
+            <p>Protótipo independente para o ideathon. Não é um serviço oficial nem um canal de atendimento real.</p>
+            <span class="footer-local"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 0 1 14 0Z"/><circle cx="12" cy="10" r="2.3"/></svg> Paulista, Pernambuco</span>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

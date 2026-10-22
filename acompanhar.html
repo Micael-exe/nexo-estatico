@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#103e34">
+    <meta name="description" content="Canal em Dia: protótipo para participação da comunidade e acompanhamento da manutenção dos canais de Paulista, Pernambuco.">
+    <title>Acompanhar relato · Canal em Dia</title>
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <script src="/js/config.js" defer></script>
+    <script src="/js/common.js" defer></script>
+    <script src="/js/acompanhar.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+<div class="demo-strip"><span class="demo-dot"></span><strong>Ambiente de demonstração.</strong> Use somente informações fictícias.</div>
+<header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="/" class="brand" aria-label="Canal em Dia — página inicial">
+                <span class="brand-mark"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 12c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 17c3-3 5 3 8 0s5 3 8 0 4 0 4 0"/></svg></span>
+                <span class="brand-name">Canal em Dia<small>Cuidado que conecta</small></span>
+            </a>
+            <nav class="desktop-nav" aria-label="Navegação principal">
+                <a href="/" class="nav-item">Início</a>
+                <a href="/acompanhar" class="nav-item active" aria-current="page">Acompanhar</a>
+                <a href="/canais" class="nav-item">Canais</a>
+            </nav>
+            <div class="header-actions">
+                <a href="/novo-relato" class="button button-forest button-small">Novo relato <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+                <button class="mobile-toggle" type="button" id="menu-toggle" aria-expanded="false" aria-controls="mobile-navigation" aria-label="Abrir ou fechar menu">
+                    <span data-open><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></span><span data-close hidden><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></span>
+                </button>
+            </div>
+        </div>
+        <nav id="mobile-navigation" class="mobile-nav d-lg-none" aria-label="Navegação principal no celular" hidden>
+            <a class="nav-item" href="/">Início</a>
+            <a class="nav-item" href="/acompanhar" aria-current="page">Acompanhar relato</a>
+            <a class="nav-item" href="/canais">Canais acompanhados</a>
+            <a class="button button-forest" href="/novo-relato">Novo relato <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
+        </nav>
+    </div>
+</header>
+    <main id="conteudo" tabindex="-1">
+<div>
+    <div class="hero-shell">
+        <section class="hero hero-compact" aria-labelledby="track-heading">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-copy">
+                        <div class="eyebrow">Acompanhamento do relato</div>
+                        <h1 id="track-heading">Acompanhar seu <em>protocolo.</em></h1>
+                        <p class="hero-description">Digite o protocolo e a chave de acesso do recibo para consultar o andamento do seu relato demonstrativo.</p>
+
+                        <form class="lookup-card" id="lookup-form" novalidate aria-label="Consultar protocolo">
+                            <div class="lookup-field">
+                                <label for="field-protocol" class="form-label">Protocolo</label>
+                                <input id="field-protocol" type="text" class="form-control" maxlength="40" required autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="CED-AAAAMMDD-XXXXXXXXXXXX" aria-describedby="protocol-help">
+                                <p class="field-help mb-0" id="protocol-help">Está no recibo, logo abaixo de “Seu protocolo”.</p>
+                                <p class="field-error" id="error-protocol" role="alert" hidden></p>
+                            </div>
+                            <div class="lookup-field">
+                                <label for="field-credential" class="form-label">Chave de acesso</label>
+                                <div class="lookup-secret">
+                                    <input id="field-credential" type="password" class="form-control" maxlength="128" required autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="credential-help">
+                                    <button type="button" class="lookup-toggle" id="toggle-key" aria-pressed="false" aria-label="Mostrar a chave de acesso">
+                                        <span data-show><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></svg></span><span data-hide hidden><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18M10.6 5.7A9.6 9.6 0 0 1 12 5.5c6 0 9.5 6.5 9.5 6.5a16 16 0 0 1-2.6 3.4M6.5 7.2C4 8.9 2.5 12 2.5 12s3.5 6.5 9.5 6.5c1.6 0 3-.4 4.2-1M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg></span>
+                                    </button>
+                                </div>
+                                <p class="field-help mb-0" id="credential-help">A chave é privada. O protocolo sozinho não dá acesso ao relato.</p>
+                                <p class="field-error" id="error-credential" role="alert" hidden></p>
+                            </div>
+                            <button type="submit" class="button button-forest lookup-submit" id="lookup-submit">
+                                <span data-idle>Consultar <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></span>
+                                <span data-busy hidden><span class="loading-spinner"></span> Consultando…</span>
+                            </button>
+                            <div class="connection-notice" id="offline-notice" role="status" hidden><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 10 18H2L12 3Z"/><path d="M12 9v5m0 3h.01"/></svg> Você está sem conexão. Esta página funciona offline, mas confira sua rede se algo não carregar.</div>
+                        </form>
+                        <p class="hero-note"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v6c0 5 7.5 9 7.5 9s7.5-4 7.5-9V6L12 3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg> Demonstração do projeto. Use somente informações fictícias.</p>
+                    </div>
+                    <div class="hero-art"><img src="/images/canal-paulista.svg" width="760" height="720" alt="" role="presentation"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="track-section" aria-labelledby="list-heading">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <div class="eyebrow">Nesta sessão</div>
+                    <h2 id="list-heading">Seus protocolos</h2>
+                    <p>Os relatos que você consultar ficam listados aqui apenas nesta sessão, que expira após cerca de 30 minutos sem atividade.</p>
+                </div>
+                <button type="button" class="button button-outline button-small" id="forget-btn" hidden><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg> Encerrar consulta</button>
+            </div>
+
+            <div class="track-layout" id="track-layout"></div>
+
+            <div class="help-band">
+                <span class="tile tile-round" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 4c-8-2-15 2-15 8a6 6 0 0 0 11 3c2-3 3-7 4-11Z"/><path d="M3 21 15 9M8 16l-1-6m5 2 5 1"/></svg></span>
+                <div>
+                    <h3>Não encontrou seu protocolo?</h3>
+                    <p>Confira se o protocolo e a chave foram digitados corretamente, sem espaços. Os relatos desta demonstração ficam salvos somente no navegador em que foram criados. Se perdeu a chave, não há recuperação de acesso: faça um novo relato demonstrativo.</p>
+                </div>
+                <a class="button button-outline button-small" href="/novo-relato">Novo relato <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<template id="tpl-empty">
+    <div class="empty-card">
+        <span class="tile" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="4" width="13" height="16" rx="2"/><path d="M7 8H4v13h12v-1M11 4V2h5v2"/></svg></span>
+        <h3>Nenhum protocolo consultado ainda</h3>
+        <p>Use o protocolo e a chave do recibo do seu relato. Ainda não fez um relato? <a href="/novo-relato">Registre um relato demonstrativo</a>.</p>
+        <details class="privacy-box mt-3">
+            <summary>Só quer testar? Use o relato de exemplo</summary>
+            <div class="privacy-content">
+                <p>Protocolo: <code>CED-20261015-0A1B2C3D4E5F</code><br>Chave: <code>DEMO-chave-fictica-0123456789-abcdef</code></p>
+                <button type="button" class="button button-outline button-small" id="fill-demo">Preencher os campos</button>
+            </div>
+        </details>
+    </div>
+</template>
+
+<template id="tpl-sidebar">
+    <aside class="report-sidebar" aria-label="Como funciona o acompanhamento">
+        <div class="sidebar-card dark">
+            <div class="eyebrow">Acompanhamento</div>
+            <h2>Protocolo e chave,<br>sempre juntos.</h2>
+            <p>O protocolo identifica o relato. A chave, que só aparece no recibo, comprova que ele é seu.</p>
+            <ol class="sidebar-steps">
+                <li><strong>Digite</strong><span>Protocolo e chave do recibo.</span></li>
+                <li><strong>Consulte</strong><span>Situação e andamento.</span></li>
+                <li><strong>Encerre</strong><span>Limpe a consulta ao terminar.</span></li>
+            </ol>
+        </div>
+        <div class="sidebar-card"><div class="sidebar-safe"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v6c0 5 7.5 9 7.5 9s7.5-4 7.5-9V6L12 3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg><div><h3>Sua privacidade vem primeiro.</h3><p>Contato e observações internas não aparecem aqui. Em aparelho compartilhado, use “Encerrar consulta”.</p></div></div></div>
+    </aside>
+</template>
+    </main>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="/" class="brand" aria-label="Canal em Dia — voltar ao início"><span class="brand-mark"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 12c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 17c3-3 5 3 8 0s5 3 8 0 4 0 4 0"/></svg></span><span class="brand-name">Canal em Dia<small>Cuidado que conecta</small></span></a>
+                <p>Uma proposta para aproximar comunidade, cuidado ambiental e manutenção dos canais.</p>
+            </div>
+            <nav class="footer-links" aria-label="Navegação do rodapé">
+                <a href="/">Início</a>
+                <a href="/novo-relato">Novo relato</a>
+                <a href="/acompanhar">Acompanhar</a>
+                <a href="/canais">Canais</a>
+            </nav>
+        </div>
+        <div class="footer-bottom">
+            <p>Protótipo independente para o ideathon. Não é um serviço oficial nem um canal de atendimento real.</p>
+            <span class="footer-local"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 0 1 14 0Z"/><circle cx="12" cy="10" r="2.3"/></svg> Paulista, Pernambuco</span>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
