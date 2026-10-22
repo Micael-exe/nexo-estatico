@@ -124,3 +124,9 @@ body{background:linear-gradient(180deg,#f6f7ef 0%,#eef3e1 100%) fixed}
     .hero:after,.hero-art>img,.hero-copy>*,.hero .button-lime{animation:none!important}
     .reveal{opacity:1;transform:none;transition:none}
 }
+
+/* Navegação da área municipal (preenchida por js/auth.js) */
+[data-staff-nav-mobile],[data-staff-nav-footer]{display:contents}
+.footer-links .nav-logout{font-size:11px;font-family:inherit}
+.footer-links .nav-logout:hover{text-decoration:underline}
+.desktop-nav + .header-actions .nav-logout,.staff-nav .nav-logout{font-family:inherit}

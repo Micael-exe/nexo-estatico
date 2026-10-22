@@ -71,6 +71,20 @@ window.NEXO_CONFIG = {
   "eye": "<path d=\"M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/>",
   "eye-off": "<path d=\"M3 3l18 18M10.6 5.7A9.6 9.6 0 0 1 12 5.5c6 0 9.5 6.5 9.5 6.5a16 16 0 0 1-2.6 3.4M6.5 7.2C4 8.9 2.5 12 2.5 12s3.5 6.5 9.5 6.5c1.6 0 3-.4 4.2-1M9.9 9.9a3 3 0 0 0 4.2 4.2\"/>",
   "lock": "<rect x=\"5\" y=\"10.5\" width=\"14\" height=\"10\" rx=\"2\"/><path d=\"M8 10.5V8a4 4 0 0 1 8 0v2.5\"/>",
-  "water": "<path d=\"M2 7c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 12c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 17c3-3 5 3 8 0s5 3 8 0 4 0 4 0\"/>"
+  "water": "<path d=\"M2 7c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 12c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 17c3-3 5 3 8 0s5 3 8 0 4 0 4 0\"/>",
+  "logout": "<path d=\"M9 4H5v16h4M16 8l4 4-4 4M20 12H9\"/>",
+  "user": "<circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4 21c1-4.5 4.5-6.5 8-6.5s7 2 8 6.5\"/>",
+  "dashboard": "<rect x=\"3\" y=\"3\" width=\"7.5\" height=\"9\" rx=\"1.5\"/><rect x=\"13.5\" y=\"3\" width=\"7.5\" height=\"5\" rx=\"1.5\"/><rect x=\"13.5\" y=\"11\" width=\"7.5\" height=\"10\" rx=\"1.5\"/><rect x=\"3\" y=\"15\" width=\"7.5\" height=\"6\" rx=\"1.5\"/>"
+ },
+ "statuses": [
+  "Recebido",
+  "Em análise",
+  "Encaminhado",
+  "Resolvido",
+  "Descartado"
+ ],
+ "staff": {
+  "registrationCodeHash": "b847228040f26ad8a3889dc9de85f840afbbdce68b6aa411e20d0d2f83c9dcd6",
+  "sessionMinutes": 30
  }
 };

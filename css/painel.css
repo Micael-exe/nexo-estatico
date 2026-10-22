@@ -1,0 +1,34 @@
+/* Área municipal: login, cadastro e painel. Complementa o app.css (que já traz .auth-* e .dash-*). */
+.field{margin-bottom:1rem}
+.field-last{margin-bottom:1.5rem}
+.btn-block{width:100%;justify-content:center;margin-top:0}
+.auth-card .demo-notice{margin:18px 0 22px}
+.auth-card .demo-notice code{font-size:.85em}
+.auth-card .form-label,.detail-form .form-label{display:block}
+.auth-card .form-control,.dash-card .form-control,.dash-card .form-select{width:100%}
+.auth-card .button .loading-spinner,.detail-form .button .loading-spinner{margin-right:0}
+
+.dash-head{margin-bottom:6px}
+.dash-page .demo-notice{margin:14px 0 0}
+.dash-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:start}
+.dash-layout.has-detail{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}
+@media(max-width:991px){.dash-layout,.dash-layout.has-detail{grid-template-columns:1fr}}
+.dash-filters label{display:block}
+.detail{scroll-margin-top:12px}
+.detail-top h2:focus{outline:none}
+.detail-close{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;flex:none}
+.detail-close:hover{background:#eef2e6}
+.detail-close .icon{width:18px;height:18px}
+.detail-form textarea.form-control{min-height:84px}
+.detail-form .field{margin-bottom:.9rem}
+.detail-form .copy-status{margin-top:12px}
+.report-row small{display:block}
+.report-row:focus-visible{outline:3px solid #719d2e;outline-offset:-3px;border-radius:10px}
+.stat-card:focus-visible{outline:3px solid #719d2e;outline-offset:2px}
+.history strong{font-weight:600}
+
+/* Erros de campo: a regra .auth-card p (cor "muted") do app.css não pode apagar o vermelho */
+.auth-card .field-error,.detail-form .field-error{color:var(--danger);font-size:12.5px;line-height:1.5;margin-top:6px}
+.form-control[aria-invalid=true],.form-select[aria-invalid=true]{border-color:#c87979}
+.form-control[aria-invalid=true]:focus,.form-select[aria-invalid=true]:focus{box-shadow:0 0 0 3px #c8797933}
+.copy-status:focus{outline:none}

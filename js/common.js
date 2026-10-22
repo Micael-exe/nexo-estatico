@@ -75,21 +75,43 @@
         randomBytes(n) { return crypto.getRandomValues(new Uint8Array(n)); },
 
         /* "Banco" da demonstração: relatos criados neste navegador (localStorage).
-           Só o hash da chave é guardado; a chave aparece apenas no recibo. */
+           Só o hash da chave é guardado; a chave aparece apenas no recibo.
+           O relato de exemplo (seed) vive no config.js; alterações feitas pelo painel
+           municipal sobre ele ficam em ADJ_KEY e são mescladas na leitura. */
         reports: {
             KEY: 'nexo.relatos.v1',
-            all() {
-                let saved = [];
+            ADJ_KEY: 'nexo.relatos.ajustes.v1',
+            _read(key, fallback) {
                 try {
-                    const parsed = JSON.parse(localStorage.getItem(this.KEY) || '[]');
-                    if (Array.isArray(parsed)) saved = parsed;
-                } catch { /* JSON inválido: ignora */ }
-                return [CFG.seed, ...saved];
+                    const parsed = JSON.parse(localStorage.getItem(key) || 'null');
+                    return parsed && typeof parsed === 'object' ? parsed : fallback;
+                } catch { return fallback; /* JSON inválido: ignora */ }
+            },
+            _saved() { const v = this._read(this.KEY, []); return Array.isArray(v) ? v : []; },
+            _adjust() { const v = this._read(this.ADJ_KEY, {}); return Array.isArray(v) ? {} : v; },
+            all() {
+                const adj = this._adjust();
+                return [{ ...CFG.seed, ...(adj[CFG.seed.id] || {}) }, ...this._saved()];
             },
             add(report) {
-                const saved = this.all().slice(1);
+                const saved = this._saved();
                 saved.unshift(report);
                 localStorage.setItem(this.KEY, JSON.stringify(saved.slice(0, 50)));
+            },
+            /* Atualiza campos de um relato (usado pelo painel municipal). Retorna true se achou. */
+            update(id, patch) {
+                if (id === CFG.seed.id) {
+                    const adj = this._adjust();
+                    adj[id] = { ...(adj[id] || {}), ...patch };
+                    localStorage.setItem(this.ADJ_KEY, JSON.stringify(adj));
+                    return true;
+                }
+                const saved = this._saved();
+                const i = saved.findIndex((r) => r && r.id === id);
+                if (i < 0) return false;
+                saved[i] = { ...saved[i], ...patch };
+                localStorage.setItem(this.KEY, JSON.stringify(saved));
+                return true;
             },
         },
     };
