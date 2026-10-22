@@ -10,6 +10,7 @@
         const clearWrap = document.getElementById('canais-clear-wrap');
         const items = Array.from(list.querySelectorAll('.channel-item'));
         const total = Number(count.dataset.total);
+        const chips = Array.from(document.querySelectorAll('.chip-stat'));
 
         const normalize = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
 
@@ -22,6 +23,7 @@
                 li.hidden = !ok;
                 if (ok) visible++;
             });
+            chips.forEach((chip) => chip.setAttribute('aria-pressed', String(chip.dataset.filter === st)));
             const filtered = Boolean(st || needle);
             const noun = total === 1 ? 'canal' : 'canais';
             count.firstChild.textContent = `${visible} de ${total} ${noun}`;
@@ -35,6 +37,11 @@
             status.value = '';
             apply();
         }
+
+        chips.forEach((chip) => chip.addEventListener('click', () => {
+            status.value = status.value === chip.dataset.filter ? '' : chip.dataset.filter;
+            apply();
+        }));
 
         form.addEventListener('submit', (e) => e.preventDefault());
         search.addEventListener('input', apply);

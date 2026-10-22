@@ -18,6 +18,29 @@
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape') set(false); });
     });
 
+    // Cabeçalho com sombra ao rolar + revelação suave dos cartões
+    document.addEventListener('DOMContentLoaded', () => {
+        const header = document.querySelector('.site-header');
+        if (header) {
+            const onScroll = () => header.classList.toggle('is-stuck', window.scrollY > 8);
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        }
+        const targets = document.querySelectorAll('.how-card, .participation-banner, .help-band, .sidebar-card, .report-card, .scope-note, .channel-item, .chip-stat');
+        const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!('IntersectionObserver' in window) || reduce) return;
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+        targets.forEach((el, i) => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight) return;           // já visível: não anima
+            el.classList.add('reveal');
+            el.style.transitionDelay = `${Math.min(i % 4, 3) * 70}ms`;
+            io.observe(el);
+        });
+    });
+
     const tz = new Intl.DateTimeFormat('pt-BR', {
         timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit', year: 'numeric',
         hour: '2-digit', minute: '2-digit', hourCycle: 'h23',

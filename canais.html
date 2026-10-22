@@ -2,13 +2,14 @@
 <html lang="pt-BR">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#103e34">
     <meta name="description" content="Canal em Dia: protótipo para participação da comunidade e acompanhamento da manutenção dos canais de Paulista, Pernambuco.">
     <title>Canais acompanhados · Canal em Dia</title>
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/extra.css">
     <script src="/js/config.js" defer></script>
     <script src="/js/common.js" defer></script>
     <script src="/js/canais.js" defer></script>
@@ -68,6 +69,8 @@
 
             <div class="report-layout">
                 <div>
+                    <div class="chip-stats" role="group" aria-label="Resumo por situação"><button type="button" class="chip-stat status-canal-em-dia" data-filter="em-dia" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><strong>3</strong><span>Em dia</span></button><button type="button" class="chip-stat status-canal-atencao" data-filter="atencao" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10h.01"/></svg><strong>1</strong><span>Atenção</span></button><button type="button" class="chip-stat status-canal-obstrucao" data-filter="obstrucao" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 10 18H2L12 3Z"/><path d="M12 9v5m0 3h.01"/></svg><strong>1</strong><span>Com obstrução</span></button><button type="button" class="chip-stat status-canal-sem-registro" data-filter="sem-registro" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><strong>1</strong><span>Sem registro</span></button></div>
+
                     <form class="filter-bar" role="search" aria-label="Filtrar canais" id="canais-form">
                         <div class="search-field">
                             <label for="canais-busca" class="visually-hidden">Buscar por canal, bairro ou trecho</label>
@@ -248,5 +251,6 @@
         </div>
     </div>
 </footer>
+    <nav class="tabbar" aria-label="Navegação rápida"><a href="/" class=""><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h14V9M9 21v-7h6v7"/></svg><span>Início</span></a><a href="/novo-relato" class="tab-cta"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg><span>Relato</span></a><a href="/acompanhar" class=""><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="4" width="13" height="16" rx="2"/><path d="M7 8H4v13h12v-1M11 4V2h5v2"/></svg><span>Acompanhar</span></a><a href="/canais" class="" aria-current="page"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 12c3-3 5 3 8 0s5 3 8 0 4 0 4 0M2 17c3-3 5 3 8 0s5 3 8 0 4 0 4 0"/></svg><span>Canais</span></a></nav>
 </body>
 </html>

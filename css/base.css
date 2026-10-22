@@ -1,0 +1,55 @@
+/* Subconjunto local do Bootstrap 5.3 (reboot + utilitários usados). Substitui o CDN: funciona offline. */
+*,::after,::before{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+body{margin:0}
+[hidden]{display:none!important}
+h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2}
+p{margin-top:0;margin-bottom:1rem}
+ol,ul{padding-left:2rem;margin-top:0;margin-bottom:1rem}
+ol ol,ol ul,ul ol,ul ul{margin-bottom:0}
+dl{margin-top:0;margin-bottom:1rem}
+dt{font-weight:700}
+dd{margin-bottom:.5rem;margin-left:0}
+strong{font-weight:bolder}
+small{font-size:.875em}
+a{text-decoration:underline}
+code{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:.875em;word-wrap:break-word}
+img,svg{vertical-align:middle}
+label{display:inline-block}
+button{border-radius:0;cursor:pointer}
+button:focus:not(:focus-visible){outline:0}
+button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}
+button,select{text-transform:none}
+[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}
+fieldset{min-width:0;padding:0;margin:0;border:0}
+legend{float:left;width:100%;padding:0;margin-bottom:.5rem;font-size:calc(1.275rem + .3vw);line-height:inherit}
+legend+*{clear:left}
+summary{display:list-item;cursor:pointer}
+textarea{resize:vertical}
+[type=search]{-webkit-appearance:textfield;outline-offset:-2px}
+::-webkit-search-decoration{-webkit-appearance:none}
+table{caption-side:bottom;border-collapse:collapse}
+
+.container{width:100%;margin-right:auto;margin-left:auto}
+.row{--bs-gutter-x:1.5rem;--bs-gutter-y:0;display:flex;flex-wrap:wrap;margin-top:calc(-1*var(--bs-gutter-y));margin-right:calc(-.5*var(--bs-gutter-x));margin-left:calc(-.5*var(--bs-gutter-x))}
+.row>*{flex-shrink:0;width:100%;max-width:100%;padding-right:calc(var(--bs-gutter-x)*.5);padding-left:calc(var(--bs-gutter-x)*.5);margin-top:var(--bs-gutter-y)}
+.g-3{--bs-gutter-x:1rem;--bs-gutter-y:1rem}
+.col-12{flex:0 0 auto;width:100%}
+@media(min-width:768px){.col-md-6{flex:0 0 auto;width:50%}}
+@media(min-width:992px){.d-lg-none{display:none!important}}
+
+.mb-0{margin-bottom:0!important}.mb-4{margin-bottom:1.5rem!important}
+.mt-0{margin-top:0!important}.mt-2{margin-top:.5rem!important}.mt-3{margin-top:1rem!important}
+
+.visually-hidden{width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important;position:absolute!important}
+
+.form-label{margin-bottom:.5rem}
+.form-control{display:block;width:100%;padding:.375rem .75rem;font-size:1rem;font-weight:400;line-height:1.5;color:#212529;background-color:#fff;background-clip:padding-box;border:1px solid #dee2e6;-webkit-appearance:none;appearance:none;border-radius:.375rem;transition:border-color .15s ease-in-out,box-shadow .15s ease-in-out}
+.form-control[type=file]{overflow:hidden}
+.form-control:focus{outline:0}
+.form-control::placeholder{color:#6c757d;opacity:1}
+.form-control:disabled{background-color:#e9ecef;opacity:1}
+textarea.form-control{min-height:calc(1.5em + .75rem + 2px)}
+.form-select{display:block;width:100%;padding:.375rem 2.25rem .375rem .75rem;font-size:1rem;font-weight:400;line-height:1.5;color:#212529;background-color:#fff;background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");background-repeat:no-repeat;background-position:right .75rem center;background-size:16px 12px;border:1px solid #dee2e6;border-radius:.375rem;-webkit-appearance:none;appearance:none}
+.form-select:focus{outline:0}
+.is-invalid{border-color:#dc3545}
