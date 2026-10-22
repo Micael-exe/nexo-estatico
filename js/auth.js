@@ -197,11 +197,23 @@
         const on = (href) => (path === href ? ' active' : '');
         const guestOn = path === '/entrar' || path === '/cadastro' ? ' active' : '';
         const html = (kind) => {
+            if (kind === 'header') {                      // botão em destaque no cabeçalho
+                const cta = (href, ic, long, short) => `<a class="button button-outline button-small staff-cta${path === href ? ' is-current' : ''}" href="${href}"${path === href ? ' aria-current="page"' : ''}>${window.Nexo.icon(ic)}<span class="cta-long">${long}</span><span class="cta-short" aria-hidden="true">${short}</span></a>`;
+                return logged
+                    ? cta('/painel', 'dashboard', 'Painel municipal', 'Painel') + '<button type="button" class="nav-logout staff-exit" data-logout aria-label="Sair da área municipal">' + window.Nexo.icon('logout') + '<span>Sair</span></button>'
+                    : cta('/entrar', 'user', 'Área municipal', 'Entrar');
+            }
             const cls = kind === 'footer' ? '' : 'nav-item';
             if (!logged) return `<a class="${cls}${kind === 'footer' ? '' : guestOn}" href="/entrar">Área municipal</a>`;
             return `<a class="${cls}${kind === 'footer' ? '' : on('/painel')}" href="/painel"${path === '/painel' ? ' aria-current="page"' : ''}>Painel</a>`
                  + `<button type="button" class="${cls} nav-logout" data-logout>Sair</button>`;
         };
+        document.querySelectorAll('[data-tab-staff]').forEach((el) => {
+            const here = ['/entrar', '/cadastro', '/painel'].includes(path);
+            el.setAttribute('href', logged ? '/painel' : '/entrar');
+            el.innerHTML = window.Nexo.icon(logged ? 'dashboard' : 'user') + `<span>${logged ? 'Painel' : 'Área'}</span>`;
+            if (here) el.setAttribute('aria-current', 'page'); else el.removeAttribute('aria-current');
+        });
         document.querySelectorAll('[data-staff-nav]').forEach((el) => { el.innerHTML = html('header'); });
         document.querySelectorAll('[data-staff-nav-mobile]').forEach((el) => { el.innerHTML = html('mobile'); });
         document.querySelectorAll('[data-staff-nav-footer]').forEach((el) => { el.innerHTML = html('footer'); });
